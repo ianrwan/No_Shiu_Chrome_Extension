@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "No Shiu",
+    "description": "Replace the video with Shiu",
+    "version": "0.1",
+    "content_scripts": [{
+        "matches": ["https://dct.ntcu.edu.tw/", "https://dct.ntcu.edu.tw/index.php"],
+        "js": ["/extension_js/main.js"],
+        "run_at": "document_end"
+    }],
+    "action":{
+        "default_popup": "main.html",
+        "default_icon": "img/dct_prohibited.png"
+    },
+    "icons": {
+        "16": "img/dct_prohibited.png",
+        "32": "img/dct_prohibited.png",
+        "48": "img/dct_prohibited.png",
+        "128": "img/dct_prohibited.png"
+      },
+    "web_accessible_resources": [
+        {
+          "resources": ["/json/data.json"],
+          "matches": ["https://dct.ntcu.edu.tw/*"]
+        }
+      ],
+    "permissions":[
+        "storage",
+        "tabs"
+    ]
+}
